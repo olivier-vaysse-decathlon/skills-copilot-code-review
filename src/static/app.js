@@ -117,7 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Only the server can establish whether a user is signed in.
   function checkAuthentication() {
     localStorage.removeItem("currentUser");
-    validateUserSession();
+    loginButton.disabled = true;
+    validateUserSession().finally(() => {
+      loginButton.disabled = false;
+    });
     updateAuthBodyClass();
   }
 
