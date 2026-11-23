@@ -382,6 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("close-announcements").disabled = busy;
     announcementsDialog.setAttribute("aria-busy", String(busy));
     announcementsList.querySelectorAll("button").forEach((button) => { button.disabled = busy; });
+    announcementRetry.disabled = busy;
   }
 
   async function deleteAnnouncement(id) {
